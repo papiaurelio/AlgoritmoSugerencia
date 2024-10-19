@@ -18,7 +18,7 @@ app.add_middleware(
 matriz_recomendaciones_long = pd.read_pickle("matriz_recomendaciones_long.pkl")
 
 @app.get("/recomendaciones/{item_id}")
-async def hacer_recomendacion(item_id: int, n: int = 3):
+async def hacer_recomendacion(item_id: int, n: int = 5):
     # Verifica que el item exista en la matriz
     if item_id in matriz_recomendaciones_long['id1'].unique():
         # Filtra donde 'id1' sea igual al item proporcionado
